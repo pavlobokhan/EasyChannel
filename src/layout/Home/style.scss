@@ -1,2 +1,66 @@
 .homeLayout {
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+
+    &__logo {
+        margin-bottom: 10px;
+    }
+
+    &__menu {
+        height: 100%;
+        width: 68px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        padding: 10px;
+        background-size: 100%;
+        box-sizing: border-box;
+        border-right: 1px solid #F2F3F8;
+
+        &-top {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: column;
+        }
+
+        &-bottom {
+            font-size: 12px;
+            line-height: 24px;
+            text-align: center;
+            color: #504780;
+
+            &-photo {
+                border: 3px solid #8854DD;
+                height: 48px;
+                width: 48px;
+                border-radius: 40px;
+            }
+        }
+
+        &-link {
+            margin: 10px 0;
+            padding: 5px;
+            height: 38px;
+            width: 38px;
+            box-sizing: border-box;
+            border-radius: 8px;
+
+            &.active {
+                background: #F1F0FE;
+
+                svg path {
+                    fill: #8854DD;
+                }
+            }
+
+            svg {
+                height: 100%;
+                width: 100%;
+                object-fit: contain;
+            }
+        }
+    }
 }

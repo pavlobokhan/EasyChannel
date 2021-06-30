@@ -1,4 +1,4 @@
-const alerts = {
+const general = {
   state: {
     loader: false
   },
@@ -14,4 +14,4 @@ const alerts = {
   }
 };
 
-export default alerts;
+export default general;

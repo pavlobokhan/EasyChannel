@@ -10,7 +10,7 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  if (!to.name) next({ name: '404' })
+  if (!to.name) next({ name: 'orders' })
   const name = to.meta.title ? to.meta.title : ''
   document.title = `${name}`
   window.scrollTo({ top: 0, behavior: 'smooth' })

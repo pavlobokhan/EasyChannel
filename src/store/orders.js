@@ -1,6 +1,6 @@
 import axios from '@/plugin/axios'
 
-const alerts = {
+const orders = {
   state: {
     loader: false
   },
@@ -16,4 +16,4 @@ const alerts = {
   }
 };
   
-export default alerts;
+export default orders;

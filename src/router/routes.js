@@ -12,9 +12,39 @@ export default [
     }
   },
   {
-    path: '/',
-    name: 'home',
-    component: Redirect,
+    path: '/list',
+    name: 'list',
+    component: Error404,
+    meta: {
+      title: '',
+      layout: 'Home',
+      middleware: []
+    }
+  },
+  {
+    path: '/support',
+    name: 'support',
+    component: Error404,
+    meta: {
+      title: '',
+      layout: 'Home',
+      middleware: []
+    }
+  },
+  {
+    path: '/orders',
+    name: 'orders',
+    component: Error404,
+    meta: {
+      title: '',
+      layout: 'Home',
+      middleware: []
+    }
+  },
+  {
+    path: '/help',
+    name: 'help',
+    component: Error404,
     meta: {
       title: '',
       layout: 'Home',

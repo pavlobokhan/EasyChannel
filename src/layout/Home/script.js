@@ -1,12 +1,14 @@
-import table from '@/mixins/table'
+import { mapGetters } from "vuex"
 
 export default {
-  mixins: [table],
+  component: {},
   mounted() {},
   data() {
     return {}
   },
   watch: {},
-  computed: {},
+  computed: {
+    ...mapGetters(['user'])
+  },
   methods: {}
 }
