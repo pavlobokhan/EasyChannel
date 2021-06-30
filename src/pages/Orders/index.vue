@@ -96,7 +96,7 @@
         prop="profit"
         label="Profit"
       >
-        <template #default="scope">${{ Math.round(Math.random() * 1000) }}</template>
+        <template #default="">${{ Math.round(Math.random() * 1000) }}</template>
       </el-table-column>
 
       <el-table-column
