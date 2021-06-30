@@ -1,4 +1,8 @@
 import Error404 from '@/pages/404'
+import Help from '@/pages/Help'
+import Orders from '@/pages/Orders'
+import Support from '@/pages/Support'
+import List from '@/pages/List'
 
 export default [
   {
@@ -14,7 +18,7 @@ export default [
   {
     path: '/list',
     name: 'list',
-    component: Error404,
+    component: List,
     meta: {
       title: 'List',
       layout: 'Home',
@@ -24,7 +28,7 @@ export default [
   {
     path: '/support',
     name: 'support',
-    component: Error404,
+    component: Support,
     meta: {
       title: 'Support',
       layout: 'Home',
@@ -34,7 +38,7 @@ export default [
   {
     path: '/orders',
     name: 'orders',
-    component: Error404,
+    component: Orders,
     meta: {
       title: 'Orders',
       layout: 'Home',
@@ -44,7 +48,7 @@ export default [
   {
     path: '/help',
     name: 'help',
-    component: Error404,
+    component: Help,
     meta: {
       title: 'Help',
       layout: 'Home',
