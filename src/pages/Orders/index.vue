@@ -39,11 +39,10 @@
     >
       Delete Selected Orders
     </el-button>
-    
     <el-table
       ref="multipleTable"
       :data="orders"
-      style="width: 99%; margin-bottom: 20px;"
+      style="margin-bottom: 20px;"
       @selection-change="handleSelectionChange"
     >
       <el-table-column
@@ -53,6 +52,7 @@
         v-if="visibleRow.item"
         prop="item"
         label="Item"
+        min-width="300"
       >
         <template #default="scope">
           <div style="display: flex; align-items: center">
@@ -71,6 +71,7 @@
         v-if="visibleRow.order_date"
         prop="order_date"
         label="Date"
+        min-width="120"
       >
         <template #default="scope">{{ moment(scope.row.order_date, 'YYYY-MM-DD HH:mm:SS').format('MMM DD, YYYY hh:mm A') }}</template>
       </el-table-column>
@@ -79,6 +80,7 @@
         v-if="visibleRow.order_details"
         prop="order_details"
         label="Order Details"
+        min-width="300"
       >
         <template #default="scope">
           <template v-for="item in scope.row.transactions" :key="item.id">
@@ -95,6 +97,7 @@
         v-if="visibleRow.profit"
         prop="profit"
         label="Profit"
+        min-width="50"
       >
         <template #default="">${{ Math.round(Math.random() * 1000) }}</template>
       </el-table-column>
@@ -103,6 +106,7 @@
         v-if="visibleRow.buyer_details"
         prop="buyer_details"
         label="Buyer Details"
+        min-width="200"
       >
         <template #default="scope">
           <span>Name: {{scope.row.buyer.name}}</span> <br />
@@ -114,6 +118,7 @@
         v-if="visibleRow.formatted_address"
         prop="formatted_address"
         label="Shipping Address"
+        min-width="120"
       >
         <template #default="scope">{{ scope.row.address.formatted_address }}</template>
       </el-table-column>
@@ -122,6 +127,7 @@
         v-if="visibleRow.shipping_date"
         prop="shipping_date"
         label="Shipping Date"
+        min-width="120"
       >
         <template #default="scope">{{ moment(scope.row.order_date, 'YYYY-MM-DD HH:mm:SS').format('MMM DD, YYYY hh:mm A') }}</template>
       </el-table-column>
@@ -129,6 +135,7 @@
       <el-table-column
         prop="actions"
         label="Actions"
+        min-width="100"
       >
         <template #default="scope">
           <div style="display: flex">
@@ -141,7 +148,6 @@
           </div>
         </template>
       </el-table-column>
-
     </el-table>
     <div style="display: flex">
       <el-pagination

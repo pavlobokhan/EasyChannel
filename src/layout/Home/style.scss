@@ -20,6 +20,8 @@
         background-size: 100%;
         box-sizing: border-box;
         border-right: 1px solid #F2F3F8;
+        background-color: white;
+        z-index: 99999;
 
         &-top {
             display: flex;
