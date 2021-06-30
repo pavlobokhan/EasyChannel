@@ -43,7 +43,9 @@
       </div>
 
     </div>
-    <slot />
+    <div class="homeLayout__content">
+      <slot />
+    </div>
   </div>
 </template>
 

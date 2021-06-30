@@ -1,0 +1,83 @@
+.orders {
+
+    &__header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+
+        &-info {
+
+            &-title {
+                font-weight: bold;
+                font-size: 21px;
+                color: #8854DD;
+                margin: 0 0 4px;
+            }
+
+            &-description {
+                font-size: 14px;
+                color: rgba(80, 71, 128, 0.8);
+                margin: 0;
+                font-weight: 400;
+            }
+        }
+
+        &__action {
+
+        }
+    }
+
+    .el-table {
+        border: 1px solid rgba(80, 71, 128, 0.09);
+        border-radius: 8px;
+    }
+
+    .el-table__header-wrapper {
+        background: rgba(241, 240, 254, 0.9);
+        border-radius: 8px;
+    }
+
+    .el-table th, 
+    .el-table tr {
+        background-color: transparent!important;
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 26px;
+        color: #504780;
+    }
+    .el-table th:last-child,
+    .el-table td:last-child {
+        border-left: 1px solid rgba(80, 71, 128, 0.09);
+    }
+
+    .el-checkbox__input.is-checked .el-checkbox__inner, .el-checkbox__input.is-indeterminate .el-checkbox__inner {
+        background-color: #8854DD;
+        border-color: #8854DD;
+    }
+
+    .el-pagination {
+        background: #FFFFFF;
+        border: 1px solid rgba(167, 183, 210, 0.19);
+        box-shadow: 0px 2px 5px rgba(147, 170, 208, 0.04);
+        border-radius: 7px;
+        padding: 10px;
+        margin-bottom: 20px;
+
+        & .el-pager {
+
+            & .number {
+                background-color: transparent;
+            }
+        }
+    }
+
+    .el-pager li.active {
+        background-color: #8854DD!important;
+    }
+
+    .el-pagination.is-background .btn-next, .el-pagination.is-background .btn-prev, .el-pagination.is-background .el-pager li {
+        border-radius: 20px;
+    }
+}
