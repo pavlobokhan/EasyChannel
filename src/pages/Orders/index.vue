@@ -14,6 +14,19 @@
           @blur="blurSearch"
         >
         </el-input>
+        <VisibleCol
+          :items="[
+            { key: 'item', title: 'Item'},
+            { key: 'order_date', title: 'Order Date'},
+            { key: 'order_details', title: 'Order Details'},
+            { key: 'profit', title: 'Profit'},
+            { key: 'buyer_details', title: 'Buyer Details'},
+            { key: 'formatted_address', title: 'Formatted Address'},
+            { key: 'shipping_date', title: 'Shipping Date'},
+          ]"
+          :visibleRow="visibleRow"
+          @change="changeVisible"
+        />
       </div>
     </div>
     <el-button 
@@ -30,13 +43,14 @@
     <el-table
       ref="multipleTable"
       :data="orders"
-      style="width: 100%; margin-bottom: 20px;"
+      style="width: 99%; margin-bottom: 20px;"
       @selection-change="handleSelectionChange"
     >
       <el-table-column
         type="selection"
       />
       <el-table-column
+        v-if="visibleRow.item"
         prop="item"
         label="Item"
       >
@@ -54,6 +68,7 @@
       </el-table-column>
 
       <el-table-column
+        v-if="visibleRow.order_date"
         prop="order_date"
         label="Date"
       >
@@ -61,6 +76,7 @@
       </el-table-column>
 
       <el-table-column
+        v-if="visibleRow.order_details"
         prop="order_details"
         label="Order Details"
       >
@@ -76,6 +92,7 @@
       </el-table-column>
 
       <el-table-column
+        v-if="visibleRow.profit"
         prop="profit"
         label="Profit"
       >
@@ -83,7 +100,8 @@
       </el-table-column>
 
       <el-table-column
-        prop="Buyer_details"
+        v-if="visibleRow.buyer_details"
+        prop="buyer_details"
         label="Buyer Details"
       >
         <template #default="scope">
@@ -93,6 +111,7 @@
       </el-table-column>
 
       <el-table-column
+        v-if="visibleRow.formatted_address"
         prop="formatted_address"
         label="Shipping Address"
       >
@@ -100,6 +119,7 @@
       </el-table-column>
 
       <el-table-column
+        v-if="visibleRow.shipping_date"
         prop="shipping_date"
         label="Shipping Date"
       >

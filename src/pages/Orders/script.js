@@ -1,14 +1,25 @@
 import { mapGetters, mapMutations, mapActions } from "vuex"
 import moment from 'moment'
+import VisibleCol from './VisibleCol'
 
 export default {
   mounted() {
     this.fetchOrders()
   },
+  components: { VisibleCol },
   data() {
     return {
       multipleSelection: [],
       search: '',
+      visibleRow: {
+        item: true,
+        order_date: true,
+        order_details: true,
+        profit: true,
+        buyer_details: true,
+        formatted_address: true,
+        shipping_date: true
+      },
       moment,
     }
   },
@@ -73,6 +84,9 @@ export default {
             message: 'Delete completed'
           });
         })
+    },
+    changeVisible(col) {
+      this.visibleRow[col] = !this.visibleRow[col]
     }
   }
 }
