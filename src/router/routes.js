@@ -16,7 +16,7 @@ export default [
     name: 'list',
     component: Error404,
     meta: {
-      title: '',
+      title: 'List',
       layout: 'Home',
       middleware: []
     }
@@ -26,7 +26,7 @@ export default [
     name: 'support',
     component: Error404,
     meta: {
-      title: '',
+      title: 'Support',
       layout: 'Home',
       middleware: []
     }
@@ -36,7 +36,7 @@ export default [
     name: 'orders',
     component: Error404,
     meta: {
-      title: '',
+      title: 'Orders',
       layout: 'Home',
       middleware: []
     }
@@ -46,7 +46,7 @@ export default [
     name: 'help',
     component: Error404,
     meta: {
-      title: '',
+      title: 'Help',
       layout: 'Home',
       middleware: []
     }

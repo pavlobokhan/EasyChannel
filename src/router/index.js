@@ -11,7 +11,7 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
   if (!to.name) next({ name: 'orders' })
-  const name = to.meta.title ? to.meta.title : ''
+  const name = to.meta.title ? 'Easy Channel - ' + to.meta.title : 'Easy Channel'
   document.title = `${name}`
   window.scrollTo({ top: 0, behavior: 'smooth' })
   next()
