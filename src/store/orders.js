@@ -35,7 +35,38 @@ const orders = {
             reject(error);
           });
       })
-    }
+    },
+    deleteOrder({ dispatch }, id) {
+      return new Promise((resolve, reject) => {
+        axios.post(`orders/${id}`, { is_archived: true})
+          .then((res) => {
+            dispatch('fetchOrders', res.data.items)
+            resolve(res)
+          })
+          .catch(error => {
+            reject(error);
+          });
+      })
+    },
+    deleteOrders({ dispatch }, arr) {
+      return Promise.all(arr.map(item => {
+        return new Promise((resolve, reject) => {
+          axios.post(`orders/${item.id}`, { is_archived: true})
+            .then((res) => {
+              resolve(res)
+            })
+            .catch(error => {
+              reject(error);
+            })
+        })
+      }))
+        .then(() => {
+          dispatch('fetchOrders')
+        })
+        .catch(() => {
+          dispatch('fetchOrders')
+        })
+    },
   }
 };
   

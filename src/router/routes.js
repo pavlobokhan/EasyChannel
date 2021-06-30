@@ -46,6 +46,16 @@ export default [
     }
   },
   {
+    path: '/order/:id',
+    name: 'order',
+    component: Support,
+    meta: {
+      title: 'Order',
+      layout: 'Home',
+      middleware: []
+    }
+  },
+  {
     path: '/help',
     name: 'help',
     component: Help,

@@ -29,6 +29,25 @@
         }
     }
 
+    &__btn {
+        border-radius: 8px;
+        height: 30px;
+        width: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        margin: 0 5px;
+
+        &-delete {
+            background: #8854DD;
+        }
+
+        &-view {
+            background: rgba(241, 240, 254, 0.7);
+        }
+    }
+
     .el-table {
         border: 1px solid rgba(80, 71, 128, 0.09);
         border-radius: 8px;

@@ -22,8 +22,9 @@
       type="danger" 
       round
       style="margin-bottom: 10px;"
+      @click="massDelete"
     >
-      Delete
+      Delete Selected Orders
     </el-button>
     
     <el-table
@@ -110,7 +111,14 @@
         label="Actions"
       >
         <template #default="scope">
-          Delete
+          <div style="display: flex">
+            <div class="orders__btn orders__btn-view" @click="openOrder(scope.row.id)">
+              <font-awesome-icon :icon="['fas', 'bolt']" color="#8854DD" />
+            </div>
+            <div class="orders__btn orders__btn-delete" @click="handleDeleteOrder(scope.row.id)">
+              <font-awesome-icon :icon="['fas', 'trash']" color="white" />
+            </div>
+          </div>
         </template>
       </el-table-column>
 

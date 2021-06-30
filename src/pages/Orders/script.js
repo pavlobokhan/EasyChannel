@@ -22,7 +22,7 @@ export default {
   },
   methods: {
     ...mapMutations(['setOrdersMeta']),
-    ...mapActions(['fetchOrders']),
+    ...mapActions(['fetchOrders', 'deleteOrder', 'deleteOrders']),
     onPaginationChange(value) {
       this.setOrdersMeta({page: value})
       this.fetchOrders({page: value})
@@ -41,6 +41,38 @@ export default {
     },
     blurSearch() {
       this.fetchOrders()
+    },
+    handleDeleteOrder(id) {
+      this.$confirm('You want to delete order?', 'Warning', {
+        confirmButtonText: 'OK',
+        cancelButtonText: 'Cancel',
+        type: 'warning'
+      }).then(() => {
+        this.deleteOrder(id)
+          .then(() => {
+            this.$message({
+              type: 'success',
+              message: 'Delete completed'
+            });
+          })
+      }).catch(() => {
+        this.$message({
+          type: 'info',
+          message: 'Delete canceled'
+        });
+      });
+    },
+    openOrder(id) {
+      this.$router.push({name: 'order', params: {id}})
+    },
+    massDelete() {
+      this.deleteOrders(this.multipleSelection)
+        .then(() => {
+          this.$message({
+            type: 'success',
+            message: 'Delete completed'
+          });
+        })
     }
   }
 }
