@@ -67,6 +67,17 @@ const orders = {
           dispatch('fetchOrders')
         })
     },
+    getOrder(vm, id) {
+      return new Promise((resolve, reject) => {
+        axios.get(`orders/${id}`)
+          .then((res) => {
+            resolve(res)
+          })
+          .catch(error => {
+            reject(error);
+          });
+      })
+    }
   }
 };
   

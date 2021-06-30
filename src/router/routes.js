@@ -1,6 +1,7 @@
 import Error404 from '@/pages/404'
 import Help from '@/pages/Help'
 import Orders from '@/pages/Orders'
+import Order from '@/pages/Order'
 import Support from '@/pages/Support'
 import List from '@/pages/List'
 
@@ -48,7 +49,7 @@ export default [
   {
     path: '/order/:id',
     name: 'order',
-    component: Support,
+    component: Order,
     meta: {
       title: 'Order',
       layout: 'Home',
